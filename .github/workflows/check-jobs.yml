@@ -1,1 +1,15 @@
+name: Check Job Pages Every 30 Min
 
+on:
+  schedule:
+    - cron: '0,30 * * * *'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping JobWatch
+        run: |
+          curl -X GET "${{ secrets.VERCEL_APP_URL }}/api/check" \
+            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}"
