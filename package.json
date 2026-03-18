@@ -1,1 +1,8 @@
-
+{
+  "name": "jobwatch",
+  "version": "1.0.0",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "resend": "^2.1.0"
+  }
+}
